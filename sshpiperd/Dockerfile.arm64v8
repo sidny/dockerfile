@@ -18,13 +18,13 @@ RUN apk add google-authenticator glide git gcc libc-dev linux-pam-dev ;\
 ENV GO111MODULE=on
 WORKDIR /go/src/github.com/tg123/sshpiper/sshpiperd
 #RUN glide mirror set https://golang.org/x/mobile https://github.com/golang/mobile.git ;\
-    glide mirror set https://golang.org/x/crypto https://github.com/golang/crypto.git ;\
-    glide mirror set https://golang.org/x/net https://github.com/golang/net.git ;\
-    glide mirror set https://golang.org/x/tools https://github.com/golang/tools.git ;\
-    glide mirror set https://golang.org/x/text https://github.com/golang/text.git ;\
-    glide mirror set https://golang.org/x/image https://github.com/golang/image.git ;\
-    glide mirror set https://golang.org/x/sys https://github.com/golang/sys.git ;\
-    glide mirror set https://golang.org/x/net https://github.com/golang/net.git ;
+#     glide mirror set https://golang.org/x/crypto https://github.com/golang/crypto.git ;\
+#     glide mirror set https://golang.org/x/net https://github.com/golang/net.git ;\
+#     glide mirror set https://golang.org/x/tools https://github.com/golang/tools.git ;\
+#     glide mirror set https://golang.org/x/text https://github.com/golang/text.git ;\
+#     glide mirror set https://golang.org/x/image https://github.com/golang/image.git ;\
+#     glide mirror set https://golang.org/x/sys https://github.com/golang/sys.git ;\
+#     glide mirror set https://golang.org/x/net https://github.com/golang/net.git ;
 
 RUN go build -ldflags "$(/go/src/github.com/tg123/sshpiper/sshpiperd/ldflags.sh)" -tags pam -o /go/bin/sshpiperd
 
