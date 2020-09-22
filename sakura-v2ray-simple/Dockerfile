@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.9 AS V2ray
 
 RUN mkdir /usr/bin/v2ray \
   && wget -q -O - https://github.com/v2ray/v2ray-core/releases/download/v4.18.2/v2ray-linux-64.zip \
