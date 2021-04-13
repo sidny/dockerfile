@@ -13,7 +13,7 @@ COPY --from=builder /bot/node_modules /bot/node_modules
 WORKDIR /bot/
 RUN set -eux;\
     apt update ;\
-    apt install\
+    apt install -y \
       tzdata \
       libglib2.0-0 \ 
       libnss3 \
