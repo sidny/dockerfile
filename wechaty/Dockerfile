@@ -1,12 +1,12 @@
 FROM node:12.18.2-stretch as builder
 
-ADD package.json /bot/package.json
+ADD wechaty/package.json /bot/package.json
 RUN set -eux ; \
     cd /bot/; \
     npm i --prod --unsafe-perm
 
 FROM node:12.18.2-stretch-slim
-ADD package.json /bot/package.json
+ADD wechaty/package.json /bot/package.json
 COPY --from=builder /bot/node_modules /bot/node_modules
 
 
